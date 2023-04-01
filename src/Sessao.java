@@ -12,10 +12,9 @@ public class Sessao {
     }
 
     //construtor
-    public Sessao(String filme, int[][] cadeiras){
+    public Sessao(String filme){
 
         this.filme = filme;
-        this.cadeiras = cadeiras;
     }
 
     //métodos
@@ -50,9 +49,7 @@ public class Sessao {
             for(int j = 0; j < 15; j++){
                 cadeiras[i][j] = a;
                 if(cadeiras[i][j] == k){
-                    if(disponivelParaCompra(i, j) == true){
-                        System.out.println("cadeira " + cadeiras[i][j] + "numero " + a);
-                    }
+                    System.out.println("cadeira " + cadeiras[i][j] + "numero " + a);
                 }
                 a++;
             }
