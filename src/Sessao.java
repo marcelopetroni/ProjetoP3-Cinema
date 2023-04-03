@@ -1,22 +1,18 @@
 public class Sessao {
 
     private int[][] cadeiras = new int[10][15];
-    private String filme;
+    private Filme filme;
 
+    public Sessao(Filme filme) {
+        this.filme = filme;
+    }
     //gets & sets
-    public String getFilme() {
+    public Filme getFilme() {
         return filme;
     }
-    public void setFilme(String filme) {
+    public void setFilme(Filme filme) {
         this.filme = filme;
     }
-
-    //construtor
-    public Sessao(String filme){
-
-        this.filme = filme;
-    }
-
     //métodos
     public boolean disponivelParaCompra(int a, int b) {
 
@@ -42,17 +38,21 @@ public class Sessao {
         }
     }
 
-    public void numeroCadeira(int k){
+    public void exibirCadeiras(){
+        char[] alfabeto = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
-        int a = 1;
+        System.out.println("  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
         for(int i = 0; i < 10; i++){
+            System.out.print(alfabeto[i] + " ");
             for(int j = 0; j < 15; j++){
-                cadeiras[i][j] = a;
-                if(cadeiras[i][j] == k){
-                    System.out.println("cadeira " + cadeiras[i][j] + "numero " + a);
-                }
-                a++;
+               if(this.cadeiras[i][j] == 0) {
+                System.out.print("I ");
+               }
+               else {
+                System.out.print("D ");
+               }
             }
+            System.out.println();
         }
     }
 }
