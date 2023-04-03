@@ -1,5 +1,5 @@
 public class Sala {
-    private Sessao[] horarios = new Sessao[7];;
+    private Sessao[] horarios = new Sessao[7];
 
     public Sala(Sessao[] horarios) {
         this.horarios = horarios;
@@ -16,7 +16,7 @@ public class Sala {
         System.out.println("Sessões Disponíveis: ");
         for(int i = 0; i < horarios.length; i++) {
             if(horarios[i] != null) {
-                System.out.println(horarios.GetFilme().GetNome());
+                System.out.println(horarios[i].getFilme().getNome());
             }
         }
     }

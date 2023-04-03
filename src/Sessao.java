@@ -1,18 +1,18 @@
 public class Sessao {
 
     private int[][] cadeiras = new int[10][15];
-    private String filme;
+    private Filme filme;
 
     //gets & sets
-    public String getFilme() {
+    public Filme getFilme() {
         return filme;
     }
-    public void setFilme(String filme) {
+    public void setFilme(Filme filme) {
         this.filme = filme;
     }
 
     //construtor
-    public Sessao(String filme){
+    public Sessao(Filme filme){
 
         this.filme = filme;
     }
