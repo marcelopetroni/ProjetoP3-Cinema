@@ -19,12 +19,14 @@ public class Compra { // matheus
     private int pipoca; 
     private int chocolate;
     private int refrigerante;
+    private int numeroIngressos;
 
 
-public Compra(int pipoca, int refrigerante, int chocolate) {
+public Compra(int pipoca, int refrigerante, int chocolate, int numeroIngressos) {
     this.pipoca = pipoca;
     this.refrigerante = refrigerante;
     this.chocolate = chocolate;
+    this.numeroIngressos = numeroIngressos;
 }
     
 
@@ -50,6 +52,10 @@ public int getChocolate() {
 
 public void setChocolate(int chocolate) {
     this.chocolate = chocolate;
+}
+public int compra() {
+    int gastoTotal = (this.chocolate * 5) + (this.refrigerante * 5) + (this.pipoca * 20) + (this.numeroIngressos * 20);
+    return gastoTotal;
 }
 
 }

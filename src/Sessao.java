@@ -3,6 +3,9 @@ public class Sessao {
     private int[][] cadeiras = new int[10][15];
     private Filme filme;
 
+    public Sessao(Filme filme) {
+        this.filme = filme;
+    }
     //gets & sets
     public Filme getFilme() {
         return filme;
@@ -10,13 +13,6 @@ public class Sessao {
     public void setFilme(Filme filme) {
         this.filme = filme;
     }
-
-    //construtor
-    public Sessao(Filme filme){
-
-        this.filme = filme;
-    }
-
     //métodos
     public boolean disponivelParaCompra(int a, int b) {
 
