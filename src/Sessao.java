@@ -42,17 +42,21 @@ public class Sessao {
         }
     }
 
-    public void numeroCadeira(int k){
+    public void exibirCadeiras(){
+        char[] alfabeto = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
-        int a = 1;
+        System.out.println("  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
         for(int i = 0; i < 10; i++){
+            System.out.print(alfabeto[i] + " ");
             for(int j = 0; j < 15; j++){
-                cadeiras[i][j] = a;
-                if(cadeiras[i][j] == k){
-                    System.out.println("cadeira " + cadeiras[i][j] + "numero " + a);
-                }
-                a++;
+               if(this.cadeiras[i][j] == 0) {
+                System.out.print("I ");
+               }
+               else {
+                System.out.print("D ");
+               }
             }
+            System.out.println();
         }
     }
 }
