@@ -11,8 +11,24 @@ public class Usuario{
   private String nomeCartao;
   private String codigoVerificadorDoCartao;
 
+  // Construtor
+  public Usuario(String user, String CPF, String senha, int idade, String sexo, String email, 
+  String numeroCartao, String nomeCartao, String codigoVerificadorDoCartao){
+
+    this.user = user;
+    this.CPF = CPF;
+    this.senha = senha;
+    this.idade = idade;
+    this.sexo = sexo;
+    this.email = email;
+    this.numeroCartao = numeroCartao;
+    this.nomeCartao = nomeCartao;
+    this.codigoVerificadorDoCartao = codigoVerificadorDoCartao;
+  }
+  // Construtor vazio para pode usar os métodos sem necessariamente recolher algum dado.
   public Usuario() {
   }
+
   //gets & sets
   public String getUser() {
 	return user;
@@ -67,21 +83,6 @@ public class Usuario{
   }
   public void setCodigoVerificadorDoCartao(String codigoVerificadorDoCartao) {
   	this.codigoVerificadorDoCartao = codigoVerificadorDoCartao;
-  }
-  
-//construtor
-  public Usuario(String user, String CPF, String senha, int idade, String sexo, String email, 
-  String numeroCartao, String nomeCartao, String codigoVerificadorDoCartao){
-
-    this.user = user;
-    this.CPF = CPF;
-    this.senha = senha;
-    this.idade = idade;
-    this.sexo = sexo;
-    this.email = email;
-    this.numeroCartao = numeroCartao;
-    this.nomeCartao = nomeCartao;
-    this.codigoVerificadorDoCartao = codigoVerificadorDoCartao;
   }
 
   //métodos
@@ -151,7 +152,7 @@ public class Usuario{
         System.out.println("Aguardo do pagamento.");
       }
     }
-    }
+  }
   public void recolherDados() {
     Scanner in = new Scanner(System.in);
     System.out.print("Informe seu nome de usuário: ");
@@ -166,6 +167,7 @@ public class Usuario{
     System.out.print("Informe sua idade: ");
     this.idade = in.nextInt();
     in.nextLine();
+    // Limpeza de buffer
 
     System.out.print("Informe seu sexo: ");
     this.sexo = in.nextLine();

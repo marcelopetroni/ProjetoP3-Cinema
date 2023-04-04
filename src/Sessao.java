@@ -3,27 +3,29 @@ public class Sessao {
     private int[][] cadeiras = new int[10][15];
     private Filme filme;
 
+    // Construtor
     public Sessao(Filme filme) {
         this.filme = filme;
     }
-    //gets & sets
+    
+    // Gets & Sets
     public Filme getFilme() {
         return filme;
     }
     public void setFilme(Filme filme) {
         this.filme = filme;
     }
-    //métodos
 
+    // Métodos
     public void alternarDisponibilidade(int i, int j) {
-
+        // 0 é disponível e 1 siginifica indisponível
         if(cadeiras[i][j] == 0){
-            cadeiras[i][j] = 1;
+            this.cadeiras[i][j] = 1;
         }else if(cadeiras[i][j] == 1){
-            cadeiras[i][j] = 0;
+            this.cadeiras[i][j] = 0;
         }
     }
-
+    // Mostra um mapa de cadeiras disponíveis (D) e indisponíveis (I)
     public void exibirCadeiras(){
         char[] alfabeto = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
@@ -32,10 +34,10 @@ public class Sessao {
             System.out.print(alfabeto[i] + " ");
             for(int j = 0; j < 15; j++){
                if(this.cadeiras[i][j] == 0) {
-                System.out.print("I ");
+                System.out.print("D ");
                }
                else {
-                System.out.print("D ");
+                System.out.print("I ");
                }
             }
             System.out.println();

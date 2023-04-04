@@ -12,6 +12,7 @@ public class Sala {
     public void setHorarios(Sessao[] horarios) {
         this.horarios = horarios;
     }
+    
     public void sessoesDisponiveis() {
         int contador = 8;
         System.out.println("Sessões Disponíveis: ");
