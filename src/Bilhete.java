@@ -8,6 +8,9 @@ public class Bilhete { // matheus
     private double valor;
     private int cadeiraComprada;
 
+    // IGNORAR:
+    // Usuario usuario = new Usuario(1, 2,)
+    // Bilhete bilhete = new Bilhete(usuario.getUser(), usuario.getCPF());
 
 // construtor da classe Bilhete;
 public Bilhete(String user, String cpf, String sala, String sessao, String filme, 

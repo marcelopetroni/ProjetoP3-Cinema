@@ -14,20 +14,6 @@ public class Sessao {
         this.filme = filme;
     }
     //métodos
-    public boolean disponivelParaCompra(int a, int b) {
-
-        for(int i = 0; i < 10; i++){
-            for(int j = 0; j < 15; j++){    
-                if(a == i && b == j){
-                    if(cadeiras[i][j] == 0){
-                        System.out.println(cadeiras[i][j] + "disponivel");
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
 
     public void alternarDisponibilidade(int i, int j) {
 

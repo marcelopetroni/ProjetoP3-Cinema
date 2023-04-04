@@ -13,11 +13,13 @@ public class Sala {
         this.horarios = horarios;
     }
     public void sessoesDisponiveis() {
+        int contador = 8;
         System.out.println("Sessões Disponíveis: ");
         for(int i = 0; i < horarios.length; i++) {
             if(horarios[i] != null) {
-                System.out.println(horarios[i].getFilme().getNome());
+                System.out.println(contador + "-" + (contador + 2) + "h, " + horarios[i].getFilme().getNome() + ", R$20");
             }
+            contador += 2;
         }
     }
 }
