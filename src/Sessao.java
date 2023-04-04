@@ -18,7 +18,7 @@ public class Sessao {
 
     // Métodos
     public void alternarDisponibilidade(int i, int j) {
-        // 0 é disponível e 1 siginifica indisponível
+        // 0 é disponível e 1 significa indisponível
         if(cadeiras[i][j] == 0){
             this.cadeiras[i][j] = 1;
         }else if(cadeiras[i][j] == 1){
