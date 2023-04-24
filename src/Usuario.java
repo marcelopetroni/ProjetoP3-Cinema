@@ -123,7 +123,7 @@ public class Usuario{
     }
     else {
       Compra compra = new Compra(pipoca, refrigerante, chocolate);
-      System.out.println("O valor total dos ingressos foi de R$" + compra.compraAlimentos());
+      System.out.println("O valor total dos lanches foi de R$" + compra.compraAlimentos());
       System.out.println("[1] Alterar compra.\n[2] Cancelar compra.\n[3] Seguir compra.");
       int escolha2 = in.nextInt();
 
