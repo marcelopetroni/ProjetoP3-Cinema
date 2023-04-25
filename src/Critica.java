@@ -1,8 +1,10 @@
-public class Critica {
+public class Critica{
     private String nome; 
     private String origem;
     private String mensagem;
+    private Critica critica [] = new Critica [100];
 
+   
     public Critica(String nome, String origem, String mensagem) {
         this.nome = nome;
         this.origem = origem;
@@ -27,10 +29,12 @@ public class Critica {
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
-    public void atribuirNota() {
+    public Critica[] getCritica() {
+        return critica;
+    }
 
+    public void setCritica(Critica[] critica) {
+        this.critica = critica;
     }
-    public void atribuirCritica() {
-        
-    }
+
 }
