@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Critico extends Usuario {
+public class Critico extends Usuario{
     private String origem;
     private double nota;
     private int quantidade_criticos;
@@ -106,6 +106,20 @@ public class Critico extends Usuario {
             System.out.println("Aguardo do pagamento.");
           }
         }
-    }
-    
+      }
+
+      public void atribuirNota(Filme Filme, double nota) {
+          quantidade_criticos =+ quantidade_criticos;
+          this.nota = nota;
+          
+        
+      }
+      public void atribuirCritica(Filme filme, String critica ) {
+        Critica critica = new Critica("user", bola, critica);
+        
+      }
+  
+  
 }
+    
+
