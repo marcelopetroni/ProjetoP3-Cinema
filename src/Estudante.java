@@ -10,7 +10,7 @@ public class Estudante extends Usuario {
     }
 
     @Override
-    public void realizarCompra(int ingressos, int pipoca, int refrigerante, int chocolate) {
+    public void realizarCompra(int ingressos, int pipoca, int refrigerante, int chocolate, int bala, int agua) {
         Scanner in = new Scanner(System.in);
         System.out.println("1 - Comprar ingressos.\n2 - Comprar alimentos.");
         System.out.print("Informe o que você deseja: ");
@@ -46,7 +46,7 @@ public class Estudante extends Usuario {
           }
         }
         else {
-          Compra compra = new Compra(pipoca, refrigerante, chocolate);
+          Compra compra = new Compra(pipoca, refrigerante, chocolate, bala, agua);
           System.out.println("O valor total dos lanches foi de R$" + compra.compraAlimentos());
           System.out.println("[1] Alterar compra.\n[2] Cancelar compra.\n[3] Seguir compra.");
           int escolha2 = in.nextInt();
@@ -57,7 +57,8 @@ public class Estudante extends Usuario {
           }
           if(escolha2 == 1) {
             System.out.println("Informe o novo número de produtos desejados: ");
-            System.out.print("Pipoca:");
+
+            System.out.print("Pipoca: ");
             int pipoca2 = in.nextInt();
     
             System.out.print("Refrigerante: ");
@@ -66,7 +67,13 @@ public class Estudante extends Usuario {
             System.out.print("Chocolate: ");
             int chocolate2 = in.nextInt();
     
-            compra = new Compra(pipoca2, refrigerante2, chocolate2);
+            System.out.print("Bala: ");
+            int bala2 = in.nextInt();
+    
+            System.out.print("Água: ");
+            int agua2 = in.nextInt();
+    
+            compra = new Compra(pipoca2, refrigerante2, chocolate2, bala2, agua2);
             System.out.println("O novo valor dos ingressos é de R$" + compra.compraAlimentos());
           }
           else if(escolha2 == 2) {

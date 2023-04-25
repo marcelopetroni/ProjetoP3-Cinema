@@ -3,6 +3,8 @@ public class Compra {
     private int pipoca; 
     private int chocolate;
     private int refrigerante;
+    private int bala;
+    private int agua;
     private int numeroIngressos;
 
     // Diferentes construtores, pois os métodos de compra exigem dados diferentes para cada tarefa.
@@ -10,16 +12,41 @@ public class Compra {
         this.numeroIngressos = numeroIngressos;
     }
 
-    public Compra(int pipoca, int chocolate, int refrigerante) {
+    public Compra(int pipoca, int chocolate, int refrigerante, int bala, int agua) {
         this.pipoca = pipoca;
         this.chocolate = chocolate;
         this.refrigerante = refrigerante;
+        this.bala = bala;
+        this.agua = agua;
     }
 
     public Compra(int pipoca, int refrigerante, int chocolate, int numeroIngressos) {
         this.pipoca = pipoca;
         this.refrigerante = refrigerante;
         this.chocolate = chocolate;
+        this.numeroIngressos = numeroIngressos;
+    }
+    public int getBala() {
+        return bala;
+    }
+
+    public void setBala(int bala) {
+        this.bala = bala;
+    }
+
+    public int getAgua() {
+        return agua;
+    }
+
+    public void setAgua(int agua) {
+        this.agua = agua;
+    }
+
+    public int getNumeroIngressos() {
+        return numeroIngressos;
+    }
+
+    public void setNumeroIngressos(int numeroIngressos) {
         this.numeroIngressos = numeroIngressos;
     }
     
@@ -48,7 +75,7 @@ public class Compra {
     }
 
     public int compraAlimentos() {
-        int gastoTotal = (this.chocolate * 5) + (this.refrigerante * 5) + (this.pipoca * 20);
+        int gastoTotal = (this.chocolate * 5) + (this.refrigerante * 5) + (this.pipoca * 20) + (this.bala * 2) + (this.agua * 5);
         return gastoTotal;
     }
 

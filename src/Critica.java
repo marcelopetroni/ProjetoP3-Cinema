@@ -4,10 +4,13 @@ public class Critica{
     private String mensagem;
     private Critica critica [] = new Critica [100];
 
-   
     public Critica(String nome, String origem, String mensagem) {
         this.nome = nome;
         this.origem = origem;
+        this.mensagem = mensagem;
+    }
+
+    public Critica(String mensagem) {
         this.mensagem = mensagem;
     }
 
