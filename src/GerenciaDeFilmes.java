@@ -1,7 +1,7 @@
-import java.util.LinkedList;
-
 public interface GerenciaDeFilmes {
-    public abstract void incluirFilme(LinkedList list, Filme filme);
-    public abstract void excluirFilme(LinkedList list, Filme filme);
-    public abstract void alterarFilme(LinkedList list, Filme filme, Filme filme2);
+    public abstract void incluirFilme(Filmes filmes);
+
+    public abstract void excluirFilme(Filmes filmes);
+
+    public abstract void alterarFilme(Filmes filmes);
 }

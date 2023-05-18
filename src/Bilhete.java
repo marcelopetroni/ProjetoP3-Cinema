@@ -1,5 +1,5 @@
-public class Bilhete { 
-    
+public class Bilhete {
+
     private String user;
     private String cpf;
     private String sala;
@@ -12,9 +12,9 @@ public class Bilhete {
     // Usuario usuario = new Usuario(x, y, z, a, b, c, d);
     // Bilhete bilhete = new Bilhete(usuario.getUser(), usuario.getCPF(), ...);
 
-    // Construtor 
-    public Bilhete(String user, String cpf, String sala, String sessao, String filme, 
-    double valor,int cadeiraComprada) {
+    // Construtor
+    public Bilhete(String user, String cpf, String sala, String sessao, String filme,
+            double valor, int cadeiraComprada) {
         this.user = user;
         this.cpf = cpf;
         this.sala = sala;
@@ -23,7 +23,7 @@ public class Bilhete {
         this.valor = valor;
         this.cadeiraComprada = cadeiraComprada;
     }
-    
+
     // Getters and Setters
     public String getUser() {
         return user;
@@ -40,7 +40,7 @@ public class Bilhete {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
+
     public String getSala() {
         return sala;
     }
@@ -71,8 +71,8 @@ public class Bilhete {
 
     public void setValor(double valor) {
         this.valor = valor;
-    } 
-    
+    }
+
     public int getCadeiraComprada() {
         return cadeiraComprada;
     }

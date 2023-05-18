@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Funcionario extends Base implements GerenciaDeFilmes{
+public class Funcionario extends Base implements GerenciaDeFilmes {
     private double salario;
 
     public Funcionario(String nome, int idade, String email, double salario) {
@@ -15,7 +15,7 @@ public class Funcionario extends Base implements GerenciaDeFilmes{
     public void setSalario(int salario) {
         this.salario = salario;
     }
-    
+
     @Override
     public void adicionarUsuário(LinkedList funcionarios) {
         Funcionario funcionario = new Funcionario(getNome(), getIdade(), getEmail(), this.salario);
@@ -26,15 +26,16 @@ public class Funcionario extends Base implements GerenciaDeFilmes{
     public void alterarUsuario(LinkedList funcionarios) {
 
     }
+
     @Override
     public void incluirFilme(LinkedList list, Filme filme) {
-       list.add(filme);
+        list.add(filme);
     }
 
     @Override
     public void excluirFilme(LinkedList list, Filme filme) {
-        for(int i = 0; i < list.size(); i++) {
-            if(list.contains(filme)) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.contains(filme)) {
                 list.remove(filme);
             }
         }
@@ -42,8 +43,8 @@ public class Funcionario extends Base implements GerenciaDeFilmes{
 
     @Override
     public void alterarFilme(LinkedList list, Filme filme, Filme filme2) {
-        for(int i = 0; i < list.size(); i++) {
-            if(list.contains(filme)) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.contains(filme)) {
                 list.remove(filme);
                 list.add(filme2);
             }

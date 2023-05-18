@@ -18,7 +18,7 @@ public class Sala {
         System.out.println("Sessões Disponíveis: ");
         for(int i = 0; i < horarios.length; i++) {
             if(horarios[i] != null) {
-                System.out.println(contador + "-" + (contador + 2) + "h, " + horarios[i].getFilme().getNome() + ", R$20");
+                System.out.println(contador + "-" + (contador +  horarios[i].getFilme().getDuração() ) + "h, " + horarios[i].getFilme().getNome() + ", R$20");
             }
             contador += 2;
         }

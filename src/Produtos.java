@@ -1,8 +1,8 @@
 public enum Produtos {
     CHOCOLATE(5, "Chocolate"),
     REFRIGERANTE(5, "Refrigerante"),
-    PIPOCA(20, "Pipoca"), 
-    BALA(2, "Bala"), 
+    PIPOCA(20, "Pipoca"),
+    BALA(2, "Bala"),
     AGUA(5, "Água");
 
     private final int valor;
@@ -20,6 +20,5 @@ public enum Produtos {
     public String getNome() {
         return nome;
     }
-    
-    
+
 }

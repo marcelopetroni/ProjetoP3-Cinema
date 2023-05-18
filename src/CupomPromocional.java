@@ -18,5 +18,5 @@ public enum CupomPromocional {
     public String getNome() {
         return nome;
     }
-    
+
 }

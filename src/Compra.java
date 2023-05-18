@@ -1,13 +1,14 @@
-public class Compra { 
+public class Compra {
 
-    private int pipoca; 
+    private int pipoca;
     private int chocolate;
     private int refrigerante;
     private int bala;
     private int agua;
     private int numeroIngressos;
 
-    // Diferentes construtores, pois os métodos de compra exigem dados diferentes para cada tarefa.
+    // Diferentes construtores, pois os métodos de compra exigem dados diferentes
+    // para cada tarefa.
     public Compra(int numeroIngressos) {
         this.numeroIngressos = numeroIngressos;
     }
@@ -26,6 +27,7 @@ public class Compra {
         this.chocolate = chocolate;
         this.numeroIngressos = numeroIngressos;
     }
+
     public int getBala() {
         return bala;
     }
@@ -49,7 +51,7 @@ public class Compra {
     public void setNumeroIngressos(int numeroIngressos) {
         this.numeroIngressos = numeroIngressos;
     }
-    
+
     public int getPipoca() {
         return pipoca;
     }
@@ -57,7 +59,7 @@ public class Compra {
     public void setPipoca(int pipoca) {
         this.pipoca = pipoca;
     }
-    
+
     public int getRefrigerante() {
         return refrigerante;
     }
@@ -65,7 +67,7 @@ public class Compra {
     public void setRefrigerante(int refrigerante) {
         this.refrigerante = refrigerante;
     }
-    
+
     public int getChocolate() {
         return chocolate;
     }
@@ -74,13 +76,14 @@ public class Compra {
         this.chocolate = chocolate;
     }
 
-    public int compraAlimentos() {
-        int gastoTotal = (this.chocolate * 5) + (this.refrigerante * 5) + (this.pipoca * 20) + (this.bala * 2) + (this.agua * 5);
+    public double compraAlimentos() {
+        double gastoTotal = (this.chocolate * 5) + (this.refrigerante * 5) + (this.pipoca * 20) + (this.bala * 2)
+                + (this.agua * 5);
         return gastoTotal;
     }
 
-    public int compraIngressos() {
-        int gasto = this.numeroIngressos * 20;
+    public double compraIngressos() {
+        double gasto = this.numeroIngressos * 20;
         return gasto;
     }
 }

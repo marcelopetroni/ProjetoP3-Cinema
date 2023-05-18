@@ -1,5 +1,5 @@
 public class Compras extends Compra {
-    
+
     private CupomPromocional cupom;
 
     public Compras(int pipoca, int refrigerante, int chocolate, int numeroIngressos, CupomPromocional cupom) {
@@ -16,14 +16,12 @@ public class Compras extends Compra {
     }
 
     @Override
-    public int compraAlimentos() {
-        return (int) (super.compraAlimentos() * this.cupom.getValor());
+    public double compraAlimentos() {
+        return (double) (super.compraAlimentos() * this.cupom.getValor());
     }
 
     @Override
-    public int compraIngressos() {
-        return (int) (super.compraIngressos() * this.cupom.getValor());
+    public double compraIngressos() {
+        return (double) (super.compraIngressos() * this.cupom.getValor());
     }
-    
-    
 }
