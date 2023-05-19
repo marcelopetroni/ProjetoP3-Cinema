@@ -127,4 +127,12 @@ public class Usuario {
       throw e;
     } 
   }
+
+  @Override
+  public String toString() {
+    return "Usuario [user=" + user + ", CPF=" + CPF + ", senha=" + senha + ", idade=" + idade + ", sexo=" + sexo
+        + ", email=" + email + ", numeroCartao=" + numeroCartao + ", nomeCartao=" + nomeCartao
+        + ", codigoVerificadorDoCartao=" + codigoVerificadorDoCartao + "]";
+  }
+  
 }

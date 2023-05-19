@@ -1,11 +1,16 @@
 public class Sessao {
-
+    
     private int[][] cadeiras = new int[10][15];
     private Filme filme;
 
     // Construtor
+    public Sessao() {
+    }
     public Sessao(Filme filme) {
         this.filme = filme;
+    }
+    public Sessao(int[][]cadeiras) {
+        this.cadeiras = cadeiras;
     }
     
     // Gets & Sets
@@ -14,6 +19,13 @@ public class Sessao {
     }
     public void setFilme(Filme filme) {
         this.filme = filme;
+    }
+    
+    public int[][] getCadeiras() {
+        return cadeiras;
+    }
+    public void setCadeiras(int[][] cadeiras) {
+        this.cadeiras = cadeiras;
     }
 
     // Métodos
@@ -24,6 +36,7 @@ public class Sessao {
         }else if(cadeiras[i][j] == 1){
             this.cadeiras[i][j] = 0;
         }
+        setCadeiras(cadeiras);
     }
     // Mostra um mapa de cadeiras disponíveis (D) e indisponíveis (I)
     public void exibirCadeiras(){
@@ -44,7 +57,7 @@ public class Sessao {
         }
     }
     public void escolherPoltrona(int i, int j) throws PoltronaException {
-        if(i == 0 && j == 0) {
+        if(cadeiras[i][j] == 0) {
             alternarDisponibilidade(i, j);
         }
         else {

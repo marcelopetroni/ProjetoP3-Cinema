@@ -33,9 +33,10 @@ public abstract class Base {
         this.email = email;
     }
 
-    public abstract void adicionarUsuário(Usuario usuario);
+    public abstract void adicionarUsuario(Usuarios usuarios,Usuario usuario);
 
-    public abstract void alterarUsuario(String CPF, Usuario usuarioalterado);
+    public abstract void alterarUsuario(Usuarios usuarios,Usuario usuario, Usuario usuario2);
+    
     // Será preciso instanciar a classe Usuarios que vai ter a lista/vetor/banco de
     // dados
     // e adicionar/alterar usuario e será aramzenado essas infos nesse objeto

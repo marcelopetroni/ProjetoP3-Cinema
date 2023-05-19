@@ -1,12 +1,11 @@
 import java.util.LinkedList;
-
 public class Funcionario extends Base implements GerenciaDeFilmes {
-    private double salario;
-
     public Funcionario(String nome, int idade, String email, double salario) {
         super(nome, idade, email);
         this.salario = salario;
     }
+
+    private double salario;
 
     public double getSalario() {
         return salario;
@@ -15,39 +14,48 @@ public class Funcionario extends Base implements GerenciaDeFilmes {
     public void setSalario(int salario) {
         this.salario = salario;
     }
-
     @Override
-    public void adicionarUsuário(LinkedList funcionarios) {
-        Funcionario funcionario = new Funcionario(getNome(), getIdade(), getEmail(), this.salario);
-        funcionarios.add(funcionario);
+    public void incluirFilme(Filmes filmes, Filme filme) {
+        filmes.getFilmes().add(filme);
     }
 
     @Override
-    public void alterarUsuario(LinkedList funcionarios) {
+    public void excluirFilme(Filmes filmes, Filme filme) {
 
-    }
-
-    @Override
-    public void incluirFilme(LinkedList list, Filme filme) {
-        list.add(filme);
-    }
-
-    @Override
-    public void excluirFilme(LinkedList list, Filme filme) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.contains(filme)) {
-                list.remove(filme);
+        for (int i = 0; i < filmes.getFilmes().size(); i++) {
+            if (filmes.getFilmes().contains(filme)) {
+                filmes.getFilmes().remove(filme);
             }
         }
     }
 
     @Override
-    public void alterarFilme(LinkedList list, Filme filme, Filme filme2) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.contains(filme)) {
-                list.remove(filme);
-                list.add(filme2);
+    public void alterarFilme(Filmes filmes, Filme filme, Filme filme2) {
+
+        for (int i = 0; i < filmes.getFilmes().size(); i++) {
+            if (filmes.getFilmes().contains(filme)) {
+                filmes.getFilmes().remove(filme);
+                filmes.getFilmes().add(filme);
             }
         }
     }
+
+    @Override
+    public void adicionarUsuario(Usuarios usuarios, Usuario usuario) {
+        usuarios.getUsuarios().add(usuario);
+       
+    }
+
+    @Override
+    public void alterarUsuario(Usuarios usuarios, Usuario usuario, Usuario usuario2) {
+        
+        for (int i = 0; i < usuarios.getUsuarios().size(); i++) {
+            if (usuarios.getUsuarios().contains(usuario)) {
+                usuarios.getUsuarios().remove(usuario);
+                usuarios.getUsuarios().add(usuario2);
+            }
+        }
+
+    }
+
 }
