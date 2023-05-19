@@ -1,6 +1,3 @@
-import java.util.Calendar;
-import java.util.Scanner;
-
 public class Usuario {
 
   private String user;
@@ -108,61 +105,26 @@ public class Usuario {
 
   // métodos
   public double realizarCompraAlimentos(int pipoca, int refrigerante, int chocolate, int bala, int agua) {
-
-    // Usar bibloteca Date, instanciar Filmes, Poltronas com as listas
+    
     Compra compra = new Compra(pipoca, refrigerante, chocolate, bala, agua);
-
     double gastosAlimentos = compra.compraAlimentos();
-
     return gastosAlimentos;
   }
 
-  public double realizarCompraIngresso(int ingresso, Filme filme) {
+  public double realizarCompraIngresso(int ingresso, Filme filme) throws HorarioException, FilmeException {
 
-    Calendar horas = Calendar.getInstance();
-
-    // if (horas.getTime() == fi ){
-
-    Compra compra = new Compra(ingresso);
-
-    double gastosIngresso = compra.compraIngressos();
-
-    return gastosIngresso;
-
-  }
-
-  public void recolherDados() {
-
-    Scanner in = new Scanner(System.in);
-
-    System.out.print("Informe seu nome de usuário: ");
-    this.user = in.nextLine();
-
-    System.out.print("Informe seu CPF: ");
-    this.CPF = in.nextLine();
-
-    System.out.print("Informe sua senha: ");
-    this.senha = in.nextLine();
-
-    System.out.print("Informe sua idade: ");
-    this.idade = in.nextInt();
-    in.nextLine();
-    // Limpeza de buffer
-
-    System.out.print("Informe seu sexo: ");
-    this.sexo = in.nextLine();
-
-    System.out.print("Informe seu e-mail: ");
-    this.email = in.nextLine();
-
-    System.out.print("Informe o número do cartão: ");
-    this.numeroCartao = in.nextLine();
-
-    System.out.print("Informe o nome do cartão: ");
-    this.nomeCartao = in.nextLine();
-
-    System.out.print("Informe o código verificador do cartão: ");
-    this.codigoVerificadorDoCartao = in.nextLine();
-
+    if(filme.getDisponibilidade() && filme.getEmcartaz()) {
+      Compra compra = new Compra(ingresso);
+      double gastosIngresso = compra.compraIngressos();
+      return gastosIngresso;
+    }
+    else if(!filme.getEmcartaz()) {
+      FilmeException b = new FilmeException(ingresso, filme);
+      throw b;
+    }
+    else {
+      HorarioException e = new HorarioException(ingresso, filme);
+      throw e;
+    } 
   }
 }

@@ -20,14 +20,21 @@ public class Estudante extends Usuario {
   }
 
   @Override
-  public double realizarCompraIngresso(int ingresso) {
+  public double realizarCompraIngresso(int ingresso, Filme filme) throws HorarioException, FilmeException {
 
-    Compra compra = new Compra(ingresso);
-
-    double gastosIngresso = (compra.compraIngressos()) / 2;
-
-    return gastosIngresso;
-
+    if(filme.getDisponibilidade()) {
+      Compra compra = new Compra(ingresso);
+      double gastosIngresso = (compra.compraIngressos())/2;
+      return gastosIngresso;
+    }
+    else if(filme.getEmcartaz() == false) {
+      FilmeException b = new FilmeException(ingresso, filme);
+      throw b;
+    }
+    else {
+      HorarioException e = new HorarioException(ingresso, filme);
+      throw e;
+    }  
   }
 
 }

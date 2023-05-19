@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 public abstract class Base {
     private String nome;
     private int idade;
