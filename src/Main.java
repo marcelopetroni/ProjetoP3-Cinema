@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Mês: " + c.get(Calendar.MONTH));
         System.out.println("Dia do Mês: " + c.get(Calendar.DAY_OF_MONTH));
 
-        double horaFilme = 21 * 60;
+        double horaFilme = 17 * 60;
         double horaAtual = (c.get(Calendar.HOUR_OF_DAY)) * 60;
         double minutoAtual = c.get(Calendar.MINUTE);
         double horaAtualEmMinutos = horaAtual + minutoAtual;
@@ -23,7 +23,7 @@ public class Main {
 
         // Testando exceção as exceções
         Usuario usuario = new Usuario();
-        Filme filme = new Filme("Avatar", 180, "Sinopse aqui", 20, null, true, horaFilme);
+        Filme filme = new Filme("Avatar", 180, "Sinopse aqui", 20, null, false, horaFilme);
         try {
             System.out.println("Será um total de R$ " + usuario.realizarCompraIngresso(4, filme));
         }

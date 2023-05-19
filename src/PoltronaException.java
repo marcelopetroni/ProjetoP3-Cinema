@@ -1,13 +1,13 @@
 public class PoltronaException extends Exception {
-    public int ingresso;
-    public Filme filme;
+    public int i;
+    public int j;
 
     public PoltronaException() {
         super("Essa poltrona está indisponível. "); // getMessage()
     }
 
-    public PoltronaException(int ingresso, Filme filme) {
-        this.ingresso = ingresso;
-        this.filme = filme;
+    public PoltronaException(int i, int j) {
+        this.i = i;
+        this.j = j;
     }
 }

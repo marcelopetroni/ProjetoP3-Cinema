@@ -43,6 +43,15 @@ public class Sessao {
             System.out.println();
         }
     }
+    public void escolherPoltrona(int i, int j) throws PoltronaException {
+        if(i == 0 && j == 0) {
+            alternarDisponibilidade(i, j);
+        }
+        else {
+            PoltronaException p = new PoltronaException(i, j);
+            throw p;
+        }
+    }
     // Criar método para escolher poltrona, vai ter parametro o id da cadeira, se tiver null no banco de dados/lista,
     // será adicionado um dado e chamado o metodo alterar disponibilidade, se tiver preenchido,
     // cairá para a exceção PoltronaException
