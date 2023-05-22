@@ -1,4 +1,3 @@
-import java.util.LinkedList;
 public class Funcionario extends Base implements GerenciaDeFilmes {
     public Funcionario(String nome, int idade, String email, double salario) {
         super(nome, idade, email);

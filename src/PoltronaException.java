@@ -10,4 +10,5 @@ public class PoltronaException extends Exception {
         this.i = i;
         this.j = j;
     }
+    // O local que está armazenado a disponibilidade das cadeiras está na classe sessão que possui um vetor.
 }

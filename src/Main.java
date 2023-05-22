@@ -1,4 +1,4 @@
-// IGNORAR MAIN, USADO PARA TESTES
+// USADO PARA TESTES
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -7,17 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
         Calendar c = Calendar.getInstance();
-
-        System.out.println("Data/Hora atual: " + c.getTime());
-        System.out.println("Ano: " + c.get(Calendar.YEAR));
-        System.out.println("Mês: " + c.get(Calendar.MONTH));
-        System.out.println("Dia do Mês: " + c.get(Calendar.DAY_OF_MONTH));
-
-        double horaFilme = 23 * 60;
+        double horaFilme = 18;
         double horaAtual = (c.get(Calendar.HOUR_OF_DAY)) * 60;
         double minutoAtual = c.get(Calendar.MINUTE);
         double horaAtualEmMinutos = horaAtual + minutoAtual;
+
         if(horaAtualEmMinutos > horaFilme){
             System.out.println("Hora atual: " + horaAtualEmMinutos + "Hora filme: " + horaFilme);
         }
@@ -66,12 +62,21 @@ public class Main {
                 }
             }
             else {
+                // Teste das listas de filmes e usuários.
                 Administrador adm = new Administrador("a", 5, "s", 200, 4);
+                Funcionario fc = new Funcionario("a", 5, "s", 200);
                 LinkedList<Usuario> us = new LinkedList<Usuario>();
+                LinkedList<Filme> fm = new LinkedList<Filme>();
+
                 Usuarios usuarios= new Usuarios(us);
+                Filmes filmes = new Filmes(fm);
                 Usuario p1 = new Usuario("teste", "teste", "teste", 15, "teste", "teste", "teste", "teste", "teste");
                 Usuario p2 = new Usuario("teste", "teste", "teste", 20, "teste", "teste", "teste", "teste", "teste");
                 Usuario p3 = new Usuario("teste", "teste", "teste", 30, "teste", "teste", "teste", "teste", "teste");
+
+                Filme filme1 = new Filme("Avatar", 180, "Sinopse aqui", 20, null, true, 20);
+                Filme filme2 = new Filme("Mario", 150, "Sinopse aqui", 20, null, true, 16);
+                Filme filme3 = new Filme("Pânico 6", 120, "Sinopse aqui", 20, null, true, 22);
 
                 adm.adicionarUsuario(usuarios, p1);
                 adm.adicionarUsuario(usuarios, p2);
@@ -79,7 +84,14 @@ public class Main {
                 adm.excluirUsuario(usuarios, p1);
                 adm.alterarUsuario(usuarios, p2, p1);
 
+                fc.incluirFilme(filmes, filme1);
+                fc.incluirFilme(filmes, filme2);
+                fc.incluirFilme(filmes, filme3);
+                fc.excluirFilme(filmes, filme2);
+
+                System.out.println("DADOS DAS LISTAS:\n---------------------");
                 System.out.println(usuarios.getUsuarios());
+                System.out.println(filmes.getFilmes());
             }
         }
 

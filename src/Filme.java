@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class Filme {
@@ -24,13 +25,14 @@ public class Filme {
         this.emCartaz = emCartaz;
         // Foi calculado a hora do filme em que ele começa em minutos para comparar com a hora atual em minutos
         // A fim de definir sua disponibilidade a partir do horário da compra
-        this.horaFilme = (horaFilme * 60);
+        this.horaFilme = horaFilme;
+        double horasFilme = horaFilme * 60;
         
         double horaAtual = (horas.get(Calendar.HOUR_OF_DAY)) * 60; // 60 para passar horas para minutos
         double minutoAtual = horas.get(Calendar.MINUTE);
         double horaAtualEmMinutos = horaAtual + minutoAtual; 
 
-        if(horaAtualEmMinutos < horaFilme){
+        if(horaAtualEmMinutos < horasFilme){
             // Se o horário de compra for antes da hora que começa o filme, é deixado a disponibilidade como true
             this.disponibilidade = true;
         }
@@ -104,4 +106,12 @@ public class Filme {
     public void setHoraFilme(double horaFilme) {
         this.horaFilme = horaFilme;
     }
+
+    @Override
+    public String toString() {
+        return "\nNome: " + nome + "\nDuração: " + duração + "\nSinopse: " + sinopse + "\nValor: " + valor
+                + "\nCrítica: " + Arrays.toString(critica) + "\nEm Cartaz: " + emCartaz + "\nDisponibilidade: "
+                + disponibilidade + "\nHora do Filme: " + horaFilme;
+    }
+    
 }

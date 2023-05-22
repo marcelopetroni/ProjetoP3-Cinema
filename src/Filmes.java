@@ -15,6 +15,7 @@ public class Filmes{
     public void setFilmes(LinkedList<Filme> filmes) {
         this.filmes = filmes;
     }
+    // Armazena todos os filmes no LinkedList, apenas as classes Funcionário e Administrador podem alterar essa lista.
 
 }
 

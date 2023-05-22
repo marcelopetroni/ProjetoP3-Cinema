@@ -130,9 +130,9 @@ public class Usuario {
 
   @Override
   public String toString() {
-    return "Usuario [user=" + user + ", CPF=" + CPF + ", senha=" + senha + ", idade=" + idade + ", sexo=" + sexo
-        + ", email=" + email + ", numeroCartao=" + numeroCartao + ", nomeCartao=" + nomeCartao
-        + ", codigoVerificadorDoCartao=" + codigoVerificadorDoCartao + "]";
+    return "\nUser: " + user + "\nCPF: " + CPF + "\nSenha: " + senha + "\nIdade: " + idade + "\nSexo: " + sexo
+        + "\nEmail: " + email + "\nNúmero do Cartão: " + numeroCartao + "\nNome do Cartão: " + nomeCartao
+        + "\nCódigo Verificador do Cartão: " + codigoVerificadorDoCartao + "\n";
   }
   
 }

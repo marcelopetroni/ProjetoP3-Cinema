@@ -15,4 +15,5 @@ public class Usuarios {
     public void setUsuarios(LinkedList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
+    // Armazena todos os usuários no LinkedList, apenas as classes Funcionário e Administrador podem alterar essa lista.
 }

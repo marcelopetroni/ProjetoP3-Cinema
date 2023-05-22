@@ -57,15 +57,17 @@ public class Sessao {
         }
     }
     public void escolherPoltrona(int i, int j) throws PoltronaException {
+        // 0 significa disponível
         if(cadeiras[i][j] == 0) {
             alternarDisponibilidade(i, j);
+            // aqui altera a cadeira escolhida para indisponível
         }
         else {
             PoltronaException p = new PoltronaException(i, j);
             throw p;
         }
     }
-    // Criar método para escolher poltrona, vai ter parametro o id da cadeira, se tiver null no banco de dados/lista,
-    // será adicionado um dado e chamado o metodo alterar disponibilidade, se tiver preenchido,
-    // cairá para a exceção PoltronaException
+    // Será chamado esse método que se não tiver disponibilidade cairá na exceção PoltronaException
+    // A disponibiidade é definida a partir de um vetor que ao escolher uma nova cadeira é marcado 
+    // certa posição como preenchido (indisponível), (assim um novo usuário não poderá escolher aquela mesma poltrona)
 }
