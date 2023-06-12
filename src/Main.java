@@ -3,6 +3,11 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import administracao.*;
+import clientes.*;
+import exceptions.*;
+import exibicao.*;
+
 public class Main {
 
     public static void main(String[] args) {
