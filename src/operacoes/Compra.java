@@ -1,7 +1,10 @@
 package operacoes;
 
-public class Compra {
+import exceptions.FilmeException;
+import exceptions.HorarioException;
+import exibicao.Filme;
 
+public abstract class Compra {
     private int pipoca;
     private int chocolate;
     private int refrigerante;
@@ -88,4 +91,8 @@ public class Compra {
         double gasto = this.numeroIngressos * 20;
         return gasto;
     }
+
+    public abstract double realizarCompraAlimentos();
+
+    public abstract double realizarCompraIngresso(Filme filme) throws HorarioException, FilmeException;
 }

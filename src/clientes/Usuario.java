@@ -1,7 +1,4 @@
 package clientes;
-import exceptions.*;
-import exibicao.*;
-import operacoes.*;
 
 public class Usuario {
 
@@ -106,31 +103,6 @@ public class Usuario {
 
   public void setCodigoVerificadorDoCartao(String codigoVerificadorDoCartao) {
     this.codigoVerificadorDoCartao = codigoVerificadorDoCartao;
-  }
-
-  // métodos
-  public double realizarCompraAlimentos(int pipoca, int refrigerante, int chocolate, int bala, int agua) {
-    
-    Compra compra = new Compra(pipoca, refrigerante, chocolate, bala, agua);
-    double gastosAlimentos = compra.compraAlimentos();
-    return gastosAlimentos;
-  }
-
-  public double realizarCompraIngresso(int ingresso, Filme filme) throws HorarioException, FilmeException {
-
-    if(filme.getDisponibilidade() && filme.getEmcartaz()) {
-      Compra compra = new Compra(ingresso);
-      double gastosIngresso = compra.compraIngressos();
-      return gastosIngresso;
-    }
-    else if(!filme.getEmcartaz()) {
-      FilmeException b = new FilmeException(ingresso, filme);
-      throw b;
-    }
-    else {
-      HorarioException e = new HorarioException(ingresso, filme);
-      throw e;
-    } 
   }
 
   @Override
