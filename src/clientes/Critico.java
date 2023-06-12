@@ -1,7 +1,5 @@
 package clientes;
-import exceptions.*;
 import exibicao.*;
-import operacoes.*;
 
 public class Critico extends Usuario {
   private String origem;
@@ -51,34 +49,6 @@ public class Critico extends Usuario {
 
   public void setQuantidade_criticos(int quantidade_criticos) {
     this.quantidade_criticos = quantidade_criticos;
-  }
-
-  @Override
-  public double realizarCompraAlimentos(int pipoca, int refrigerante, int chocolate, int bala, int agua) {
-
-    Compra compra = new Compra(pipoca, refrigerante, chocolate, bala, agua);
-
-    double gastosAlimentos = compra.compraAlimentos();
-
-    return gastosAlimentos;
-  }
-
-  @Override
-  public double realizarCompraIngresso(int ingresso, Filme filme) throws HorarioException, FilmeException {
-
-    if(filme.getDisponibilidade()) {
-      Compra compra = new Compra(ingresso);
-      double gastosIngresso = (compra.compraIngressos()) * 0;
-      return gastosIngresso;
-    }
-    else if(filme.getEmcartaz() == false) {
-      FilmeException b = new FilmeException(ingresso, filme);
-      throw b;
-    }
-    else {
-      HorarioException e = new HorarioException(ingresso, filme);
-      throw e;
-    }  
   }
 
   public void atribuirNota(Filme Filme, double nota) {
