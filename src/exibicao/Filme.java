@@ -1,7 +1,6 @@
 package exibicao;
 
 import java.util.Arrays;
-import java.util.Calendar;
 
 import clientes.*;
 
@@ -20,31 +19,13 @@ public class Filme {
     }
     
     public Filme(String nome, int duração, String sinopse, double valor, Critica []critica, boolean emCartaz, double horaFilme) {
-        Calendar horas = Calendar.getInstance();
         this.nome = nome;
         this.duração = duração;
         this.sinopse = sinopse;
         this.valor = valor;
         this.critica = critica;
         this.emCartaz = emCartaz;
-        // Foi calculado a hora do filme em que ele começa em minutos para comparar com a hora atual em minutos
-        // A fim de definir sua disponibilidade a partir do horário da compra
         this.horaFilme = horaFilme;
-        double horasFilme = horaFilme * 60;
-        
-        double horaAtual = (horas.get(Calendar.HOUR_OF_DAY)) * 60; // 60 para passar horas para minutos
-        double minutoAtual = horas.get(Calendar.MINUTE);
-        double horaAtualEmMinutos = horaAtual + minutoAtual; 
-
-        if(horaAtualEmMinutos < horasFilme){
-            // Se o horário de compra for antes da hora que começa o filme, é deixado a disponibilidade como true
-            this.disponibilidade = true;
-        }
-        else {
-            this.disponibilidade = false;
-            // Toda vez que a compra for feita depois que começou o filme, estará indisponível o filme.
-            // e cairá na exceção HorarioException
-        }
     }
     
     public String getNome() {

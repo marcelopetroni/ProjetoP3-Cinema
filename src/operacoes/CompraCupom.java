@@ -11,6 +11,9 @@ public class CompraCupom extends Compra {
         super(pipoca, refrigerante, chocolate, numeroIngressos);
         this.cupom = cupom;
     }
+    public CompraCupom(int numeroIngressos) {
+        super(numeroIngressos);
+    }
 
     public CupomPromocional getCupom() {
         return cupom;

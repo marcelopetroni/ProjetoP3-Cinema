@@ -1,9 +1,9 @@
 package operacoes;
 
 public enum CupomPromocional {
-    IDOSO(0.25, "Idoso"),
-    CARTAOITAU(0.25, "Itaú"),
-    CARTAOBRADESCO(0.25, "Bradesco");
+    IDOSO(0.5, "Idoso"),
+    CARTAOITAU(0.5, "Itaú"),
+    CARTAOBRADESCO(0.5, "Bradesco");
 
     private final double valor;
     private final String nome;

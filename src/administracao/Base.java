@@ -40,10 +40,4 @@ public abstract class Base {
 
     public abstract void alterarUsuario(Usuarios usuarios,Usuario usuario, Usuario usuario2);
     
-    // Será preciso instanciar a classe Usuarios que vai ter a lista/vetor/banco de
-    // dados
-    // e adicionar/alterar usuario e será aramzenado essas infos nesse objeto
-    // as classes que tiverem esse metodo implementado irá procurar por meio do
-    // cpf o usuario e mudar as infos da lista.
-
 }

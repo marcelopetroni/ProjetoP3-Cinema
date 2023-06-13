@@ -1,28 +1,17 @@
 package exibicao;
 
+import java.util.LinkedList;
+
 public class Sala {
-    private Sessao[] horarios = new Sessao[7];
 
-    public Sala(Sessao[] horarios) {
-        this.horarios = horarios;
-    }
-
-    public Sessao[] getHorarios() {
-        return horarios;
-    }
-
-    public void setHorarios(Sessao[] horarios) {
-        this.horarios = horarios;
-    }
-    
-    public void sessoesDisponiveis() {
+    public void FilmesDisponiveis(LinkedList<Filme> filmes) {
         int contador = 8;
-        System.out.println("Sessões Disponíveis: ");
-        for(int i = 0; i < horarios.length; i++) {
-            if(horarios[i] != null) {
-                System.out.println(contador + "-" + (contador +  horarios[i].getFilme().getDuração() ) + "h, " + horarios[i].getFilme().getNome() + ", R$20");
+        System.out.println("Filmes Disponíveis: ");
+        for(int i = 0; i < filmes.size(); i++) {
+            if(filmes.get(i) != null) {
+                System.out.println(contador + "-" + (contador +  filmes.get(i).getHoraFilme()) + "h, " + filmes.get(i).getNome() + ", R$20");
             }
-            contador += 2;
+            contador += filmes.get(i).getHoraFilme();
         }
     }
 }

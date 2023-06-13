@@ -1,18 +1,18 @@
 package exibicao;
 import exceptions.*;
 
-public class Sessao {
+public class Poltrona {
     
     private int[][] cadeiras = new int[10][15];
     private Filme filme;
 
     // Construtor
-    public Sessao() {
+    public Poltrona() {
     }
-    public Sessao(Filme filme) {
+    public Poltrona(Filme filme) {
         this.filme = filme;
     }
-    public Sessao(int[][]cadeiras) {
+    public Poltrona(int[][]cadeiras) {
         this.cadeiras = cadeiras;
     }
     

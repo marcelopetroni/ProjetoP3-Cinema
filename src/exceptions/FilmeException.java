@@ -14,7 +14,7 @@ public class FilmeException extends Exception {
         this.filme = filme;
     }
 
-    // Informativo: A classe Usuário realiza a compra dos ingressos em que será permitido a compra se o filme
+    // Informativo: A classe CompraEstudante realiza a compra dos ingressos em que será permitido a compra se o filme
     // estiver em cartaz, caso contrário cai nessa exceção.
     // a condição de estar em cartaz é tratado na classe Filme por um atributo no qual os métodos implementados 
     // da classe Adminstrador e Funcionario são responsáveis por administrar.

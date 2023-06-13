@@ -3,7 +3,7 @@ package operacoes;
 import exceptions.*;
 import exibicao.*;
 
-public class CompraCritico extends Compra{
+public class CompraCritico extends Compra {
 
 
     public CompraCritico(int pipoca, int chocolate, int refrigerante, int bala, int agua) {

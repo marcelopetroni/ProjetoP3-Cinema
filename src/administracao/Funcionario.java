@@ -27,6 +27,7 @@ public class Funcionario extends Base implements GerenciaDeFilmes {
 
         for (int i = 0; i < filmes.getFilmes().size(); i++) {
             if (filmes.getFilmes().contains(filme)) {
+                filme.setEmcartaz(false);
                 filmes.getFilmes().remove(filme);
             }
         }
@@ -37,8 +38,9 @@ public class Funcionario extends Base implements GerenciaDeFilmes {
 
         for (int i = 0; i < filmes.getFilmes().size(); i++) {
             if (filmes.getFilmes().contains(filme)) {
+                filme.setEmcartaz(false);
                 filmes.getFilmes().remove(filme);
-                filmes.getFilmes().add(filme);
+                filmes.getFilmes().add(filme2);
             }
         }
     }

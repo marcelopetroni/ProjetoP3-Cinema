@@ -82,4 +82,11 @@ public class Bilhete {
     public void setCadeiraComprada(int cadeiraComprada) {
         this.cadeiraComprada = cadeiraComprada;
     }
+
+    @Override
+    public String toString() {
+        return "\nBilhete: \nuser =" + user + "\ncpf = " + cpf + "\nsala = " + sala + "\nsessao = " + sessao + "\nfilme = " + filme
+                + "\n valor = " + valor + "\ncadeiraComprada = " + cadeiraComprada;
+    }
+    
 }
