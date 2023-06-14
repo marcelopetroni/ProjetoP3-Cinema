@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 public class Usuarios {
 
-    private LinkedList<Usuario> usuarios = new LinkedList<Usuario>();
+    private LinkedList<Usuario> usuarios;
 
     public Usuarios(LinkedList<Usuario> usuarios) {
         this.usuarios = usuarios;
@@ -16,5 +16,6 @@ public class Usuarios {
     public void setUsuarios(LinkedList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
+    
     // Armazena todos os usuários no LinkedList, apenas as classes Funcionário e Administrador podem alterar essa lista.
 }

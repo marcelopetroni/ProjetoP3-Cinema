@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Filmes{
 
-    private LinkedList <Filme> filmes = new LinkedList<Filme>();
+    private LinkedList <Filme> filmes;
 
     public Filmes(LinkedList<Filme> filmes) {
         this.filmes = filmes;

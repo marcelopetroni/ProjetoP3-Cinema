@@ -15,21 +15,29 @@ public class Main {
 
         Sala sala = new Sala();
         LinkedList<Filme> fm = new LinkedList<Filme>();
+        LinkedList<Poltrona> polt = new LinkedList<Poltrona>();
         Filmes filmes = new Filmes(fm);
-        Poltrona poltronas = new Poltrona();
 
-        Filme filme1 = new Filme("Homem-Aranha: Através do Aranhaverso", 120, "Sinopse aqui", 20, null, true, 8);
-        Filme filme2 = new Filme("A Pequena Sereia", 120, "Sinopse aqui", 20, null, true, 10);
-        Filme filme3 = new Filme("Guardiões da Galáxia 3", 120, "Sinopse aqui", 20, null, true, 12);
+        Filme filme1 = new Filme("Homem-Aranha: Através do Aranhaverso", 120, "Sinopse aqui", 20, null, true, 12);
+        Poltrona poltrona1 = new Poltrona();
+        Filme filme2 = new Filme("A Pequena Sereia", 120, "Sinopse aqui", 20, null, true, 14);
+        Poltrona poltrona2 = new Poltrona();
+        Filme filme3 = new Filme("Guardiões da Galáxia 3", 120, "Sinopse aqui", 20, null, true, 16);
+        Poltrona poltrona3 = new Poltrona();
+
         fm.add(filme1);
         fm.add(filme2);
         fm.add(filme3);
 
-        // Programa principal
-        for (int i = 0; i < 5; i++) {
-            System.out.println("\nVocê é usuário ou adim?\n[1] Usuário\n[2] Adim");
+        polt.add(poltrona1);
+        polt.add(poltrona2);
+        polt.add(poltrona3);
 
+        // Programa principal
+        for (int i = 0; i < 100; i++) {
+            System.out.println("\nVocê é usuário ou adim?\n[1] Usuário\n[2] Adim");
             int resposta = in.nextInt();
+            
             if (resposta == 1) {
                 System.out.println("O que você deseja?\n[1] Comprar ingressos.\n[2] Comprar comida.");
                 int desejo = in.nextInt();
@@ -39,22 +47,22 @@ public class Main {
                     System.out.print("Escolha um filme pela númeração: ");
                     int escolha = in.nextInt();
                     Filme filmeEscolhido = fm.get(escolha - 1);
-                    poltronas.setFilme(filmeEscolhido);
 
                     // Primeira exceção a ser tratada (se a partir do horário atual pode comprar filme escolhido):
                     try {
                         Horario verificacao = new Horario();
-                        verificacao.horarioDisponivel(filmeEscolhido);;
+                        verificacao.horarioDisponivel(filmeEscolhido);
                     }
                     catch (HorarioException fl) {
                         fl = new HorarioException();
                         System.out.println(fl.getMessage());
                         continue;
                     }
+                    Poltrona poltronaDoFilme = polt.get(escolha - 1);
 
                     System.out.println("\nQuantas poltronas você deseja? ");
                     int quantidade = in.nextInt();
-                    poltronas.exibirCadeiras();
+                    poltronaDoFilme.exibirCadeiras();
 
                     boolean erro = false;
                     for (int x = 1; x <= quantidade; x++) {
@@ -74,7 +82,7 @@ public class Main {
 
                         // Segunda exceção a ser tratada (se poltrona se encontra disponível ou não):
                         try {
-                            poltronas.escolherPoltrona(linha, coluna - 1);
+                            poltronaDoFilme.escolherPoltrona(linha, coluna - 1);
 
                         } catch (PoltronaException p) {
                             p = new PoltronaException();
@@ -144,17 +152,18 @@ public class Main {
                     if (comida == 1) {
                         compra.setPipoca(quantidade2);
                     }
-                    if (comida == 2) {
+                    else if (comida == 2) {
                         compra.setChocolate(quantidade2);
                     }
-                    if (comida == 3) {
+                    else if (comida == 3) {
                         compra.setRefrigerante(quantidade2);
                     }
-                    if (comida == 4) {
+                    else if (comida == 4) {
                         compra.setBala(quantidade2);
                     } else {
                         compra.setAgua(quantidade2);
                     }
+                    System.out.println("---------------------------------");
                     System.out.println("Será um total de R$ " + compra.realizarCompraAlimentos());
                 }
             } else {
@@ -168,9 +177,13 @@ public class Main {
                 Usuario p2 = new Usuario("teste", "teste", "teste", 20, "teste", "teste", "teste", "teste", "teste");
                 Usuario p3 = new Usuario("teste", "teste", "teste", 30, "teste", "teste", "teste", "teste", "teste");
 
-                Filme filme4 = new Filme("Avatar", 120, "Sinopse aqui", 20, null, true, 14);
-                Filme filme5 = new Filme("Mario", 120, "Sinopse aqui", 20, null, true, 16);
-                Filme filme6 = new Filme("Pânico 6", 120, "Sinopse aqui", 20, null, true, 20);
+                Filme filme4 = new Filme("Avatar", 120, "Sinopse aqui", 20, null, true, 18);
+                Filme filme5 = new Filme("Mario", 120, "Sinopse aqui", 20, null, true, 20);
+                Filme filme6 = new Filme("Pânico 6", 120, "Sinopse aqui", 20, null, true, 22);
+
+                Poltrona poltrona4 = new Poltrona();
+                Poltrona poltrona5 = new Poltrona();
+                Poltrona poltrona6 = new Poltrona();
 
                 adm.adicionarUsuario(usuarios, p1);
                 adm.adicionarUsuario(usuarios, p2);
@@ -179,45 +192,19 @@ public class Main {
                 adm.alterarUsuario(usuarios, p2, p1);
 
                 fc.incluirFilme(filmes, filme4);
+                polt.add(poltrona4);
                 fc.incluirFilme(filmes, filme5);
+                polt.add(poltrona5);
                 fc.incluirFilme(filmes, filme6);
+                polt.add(poltrona6);
                 fc.excluirFilme(filmes, filme5);
+                polt.remove(4);
 
-                System.out.println("DADOS DAS LISTAS:\n---------------------");
-                System.out.println(usuarios.getUsuarios());
-                System.out.println(filmes.getFilmes());
+                System.out.println("Teste admin, inclusão de novos filmes.");
+                // System.out.println("DADOS DAS LISTAS:\n---------------------");
+                // System.out.println(usuarios.getUsuarios());
+                // System.out.println(filmes.getFilmes());
             }
         }
-
-        // Recolher dados de um novo usuário:
-        System.out.print("Informe seu nome de usuário: ");
-        String user = in.nextLine();
-
-        System.out.print("Informe seu CPF: ");
-        String CPF = in.nextLine();
-
-        System.out.print("Informe sua senha: ");
-        String senha = in.nextLine();
-
-        System.out.print("Informe sua idade: ");
-        int idade = in.nextInt();
-        in.nextLine();
-        // Limpeza de buffer
-
-        System.out.print("Informe seu sexo: ");
-        String sexo = in.nextLine();
-
-        System.out.print("Informe seu e-mail: ");
-        String email = in.nextLine();
-
-        System.out.print("Informe o número do cartão: ");
-        String numeroCartao = in.nextLine();
-
-        System.out.print("Informe o nome do cartão: ");
-        String nomeCartao = in.nextLine();
-
-        System.out.print("Informe o código verificador do cartão: ");
-        String codigoVerificadorDoCartao = in.nextLine();
-
     }
 }
