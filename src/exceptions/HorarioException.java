@@ -2,19 +2,18 @@ package exceptions;
 import exibicao.*;
 
 public class HorarioException extends Exception {
-    public int ingresso;
     public Filme filme;
 
     public HorarioException() {
         super("O filme está indisponível para esse horário. "); // getMessage()
     }
 
-    public HorarioException(int ingresso, Filme filme) {
-        this.ingresso = ingresso;
+    public HorarioException(Filme filme) {
         this.filme = filme;
     }
 
-    // Informativo: A classe Compra realiza a compra dos ingressos em que será permitido a partir da 
-    // disponibilidade do filme, caso contrário cai nessa exceção. A condição de disponibilidade
-    // é tratado na classe Filme e pelos métodos implementados da classe Adminstrador e Funcionario.
+    // Informativo: A classe Compra realiza a compra dos ingressos em que será permitido a compra se o filme
+    // estiver em cartaz, caso contrário cai nessa exceção. A classe Horário verifica se está dentro 
+    // do horário para assistir o filme ou se já passou do início da hora do filme.
+    // A classe Adminstrador e Funcionario são responsáveis por administrar os filmes.
 }

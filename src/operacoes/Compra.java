@@ -31,6 +31,9 @@ public abstract class Compra {
         this.chocolate = chocolate;
         this.numeroIngressos = numeroIngressos;
     }
+    
+    public Compra() {
+    }
 
     public int getBala() {
         return bala;
@@ -92,6 +95,6 @@ public abstract class Compra {
     }
     public abstract double realizarCompraAlimentos();
 
-    public abstract double realizarCompraIngresso(Filme filme) throws HorarioException, FilmeException;
+    public abstract double realizarCompraIngresso(Filme filme) throws FilmeException;
 
 }

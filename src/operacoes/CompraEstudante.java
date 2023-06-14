@@ -14,25 +14,24 @@ public class CompraEstudante extends Compra{
         super(numeroIngressos);
     }
 
+    public CompraEstudante() {
+    }
+
     @Override
     public double realizarCompraAlimentos() {
         return (double) (super.compraAlimentos());
     }
-    @Override
-    public double realizarCompraIngresso(Filme filme) throws HorarioException, FilmeException {
+   @Override
+    public double realizarCompraIngresso(Filme filme) throws FilmeException {
 
-        if(filme.getDisponibilidade() && filme.getEmcartaz()) {
-            CompraEstudante compra = new CompraEstudante(getNumeroIngressos());
+        if(filme.getEmcartaz()) {
+            CompraCritico compra = new CompraCritico(getNumeroIngressos());
             double gastosIngresso = compra.compraIngressos()/2;
             return gastosIngresso;
         }
-        else if(!filme.getEmcartaz()) {
-            FilmeException b = new FilmeException(getNumeroIngressos(), filme);
+        else {
+            FilmeException b = new FilmeException(filme);
             throw b;
         }
-        else {
-            HorarioException e = new HorarioException(getNumeroIngressos(), filme);
-            throw e;
-        } 
     }
 }

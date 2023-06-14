@@ -11,8 +11,13 @@ public class CompraCupom extends Compra {
         super(pipoca, refrigerante, chocolate, numeroIngressos);
         this.cupom = cupom;
     }
-    public CompraCupom(int numeroIngressos) {
+    
+    public CompraCupom(int numeroIngressos, CupomPromocional cupom) {
         super(numeroIngressos);
+        this.cupom = cupom;
+    }
+
+    public CompraCupom() {
     }
 
     public CupomPromocional getCupom() {
@@ -29,20 +34,16 @@ public class CompraCupom extends Compra {
     }
 
     @Override
-    public double realizarCompraIngresso(Filme filme) throws HorarioException, FilmeException {
+    public double realizarCompraIngresso(Filme filme) throws FilmeException {
 
-        if(filme.getDisponibilidade() && filme.getEmcartaz()) {
+        if(filme.getEmcartaz()) {
             CompraGeral compra = new CompraGeral(getNumeroIngressos());
             double gastosIngresso = compra.compraIngressos() - (compra.compraIngressos() * cupom.getValor());
             return gastosIngresso;
         }
-        else if(!filme.getEmcartaz()) {
-            FilmeException b = new FilmeException(getNumeroIngressos(), filme);
+        else {
+            FilmeException b = new FilmeException( filme);
             throw b;
         }
-        else {
-            HorarioException e = new HorarioException(getNumeroIngressos(), filme);
-            throw e;
-        } 
     }
 }

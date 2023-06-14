@@ -2,8 +2,10 @@ package exibicao;
 
 import java.util.Calendar;
 
-public class HorarioFilme {
-    public void disponibilidadePelaHora(Filme filme) {
+import exceptions.*;
+
+public class Horario {
+    public void horarioDisponivel(Filme filme) throws HorarioException{
         Calendar horas = Calendar.getInstance();
         double horasFilme = filme.getHoraFilme() * 60;
         
@@ -20,6 +22,8 @@ public class HorarioFilme {
         }
         else {
             filme.setDisponibilidade(false);
+            HorarioException e = new HorarioException(filme);
+            throw e;
             // Toda vez que a compra for feita depois que começou o filme, estará indisponível o filme.
             // e cairá na exceção HorarioException
         }
