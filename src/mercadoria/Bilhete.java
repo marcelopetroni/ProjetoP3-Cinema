@@ -10,10 +10,6 @@ public class Bilhete {
     private double valor;
     private int cadeiraComprada;
 
-    // Simulação de um possível main:
-    // Usuario usuario = new Usuario(x, y, z, a, b, c, d);
-    // Bilhete bilhete = new Bilhete(usuario.getUser(), usuario.getCPF(), ...);
-
     // Construtor
     public Bilhete(String user, String cpf, String sala, String sessao, String filme,
             double valor, int cadeiraComprada) {

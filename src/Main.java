@@ -19,10 +19,10 @@ public class Main {
         Filmes filmes = new Filmes(fm);
 
         Filme filme1 = new Filme("Homem-Aranha: Através do Aranhaverso", 120, "Sinopse aqui", 20, null, true, 12);
-        Poltrona poltrona1 = new Poltrona();
         Filme filme2 = new Filme("A Pequena Sereia", 120, "Sinopse aqui", 20, null, true, 14);
-        Poltrona poltrona2 = new Poltrona();
         Filme filme3 = new Filme("Guardiões da Galáxia 3", 120, "Sinopse aqui", 20, null, true, 16);
+        Poltrona poltrona1 = new Poltrona();
+        Poltrona poltrona2 = new Poltrona();
         Poltrona poltrona3 = new Poltrona();
 
         fm.add(filme1);
